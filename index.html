@@ -22,22 +22,68 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    /* Dark mode classes */
+    .dark { color-scheme: dark; }
     .dark body { background-color: #1a202c; color: #f7fafc; }
     .dark .bg-white { background-color: #2d3748 !important; }
+    .dark .bg-gray-100 { background-color: #374151 !important; }
     .dark .text-gray-800 { color: #f7fafc !important; }
-    .dark .text-gray-600 { color: #e2e8f0 !important; }
+    .dark .text-gray-600, .dark .text-gray-700 { color: #e2e8f0 !important; }
+    .dark .text-gray-500 { color: #cbd5e0 !important; }
     .dark .text-navy { color: #90cdf4 !important; }
     .dark .border { border-color: #4a5568 !important; }
-    .modal { display: none; position: fixed; z-index: 100; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); }
-    .modal-content { margin: 5% auto; display: block; width: 90%; height: 90%; max-width: 1200px; background: #fff; border-radius: 10px; overflow: hidden; }
-    .modal iframe { width: 100%; height: 100%; }
-    .modal-close { position: absolute; top: 20px; right: 40px; color: white; font-size: 30px; cursor: pointer; }
+    
+    /* Improved modal styling */
+    .modal { 
+      display: none; 
+      position: fixed; 
+      z-index: 100; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+      background: rgba(0,0,0,0.85); 
+      overflow: auto;
+    }
+    .modal-content { 
+      margin: 2% auto; 
+      width: 90%; 
+      height: 90%; 
+      max-width: 1200px; 
+      background: #fff; 
+      border-radius: 8px; 
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    .dark .modal-content {
+      background: #2d3748;
+    }
+    .modal iframe { 
+      width: 100%; 
+      height: 100%; 
+      border: none;
+    }
+    .modal-close { 
+      position: absolute; 
+      top: 15px; 
+      right: 35px; 
+      color: white; 
+      font-size: 35px; 
+      font-weight: bold;
+      cursor: pointer; 
+      z-index: 101;
+      text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    }
+    .modal-close:hover {
+      color: #ecc94b;
+    }
   </style>
 </head>
-<body class="font-sans antialiased bg-white text-gray-800 transition-colors duration-300 dark:bg-gray-900 dark:text-white">
+<body class="font-sans antialiased bg-white text-gray-800 transition-colors duration-300">
   <div class="fixed top-4 right-4 z-50">
     <button id="darkToggle" class="bg-gold text-navy font-bold py-2 px-4 rounded shadow hover:bg-yellow-400 transition">
-      <i class="fas fa-moon"></i> Dark Mode
+      <i id="darkModeIcon" class="fas fa-moon"></i> <span id="darkModeText">Dark Mode</span>
     </button>
   </div>
 
@@ -45,7 +91,7 @@
     <div class="container mx-auto px-4">
       <h1 class="text-4xl md:text-5xl font-bold mb-4">FLUID INVESTMENT GROUP</h1>
       <p class="text-xl md:text-2xl mb-6 text-gray-200">Government Contracting • Subcontracting • Consulting • Project Management</p>
-      <button onclick="document.getElementById('pdfModal').style.display='block'" class="bg-white text-navy font-bold py-3 px-6 rounded-md hover:bg-gray-100 transition duration-300 mr-2">
+      <button onclick="openPdfModal()" class="bg-white text-navy font-bold py-3 px-6 rounded-md hover:bg-gray-100 transition duration-300 mr-2">
         <i class="fas fa-eye mr-2"></i> View Capability Statement
       </button>
       <a href="/capability-statement.pdf" download class="bg-white text-navy font-bold py-3 px-6 rounded-md hover:bg-gray-100 transition duration-300">
@@ -54,21 +100,21 @@
     </div>
   </header>
 
-  <section class="py-16 bg-white dark:bg-gray-800 transition-colors duration-300">
+  <section class="py-16 bg-white transition-colors duration-300">
     <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-8 text-navy dark:text-blue-300">Contact Info</h2>
+      <h2 class="text-3xl font-bold mb-8 text-navy">Contact Info</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto" id="contacts"></div>
-      <p id="address" class="mt-4 text-gray-700 dark:text-gray-300"></p>
-      <p id="uei-cage" class="text-sm text-gray-500 dark:text-gray-400 mt-2"></p>
+      <p id="address" class="mt-4 text-gray-700"></p>
+      <p id="uei-cage" class="text-sm text-gray-500 mt-2"></p>
     </div>
   </section>
 
-  <section class="bg-gray-100 dark:bg-gray-700 py-16 transition-colors duration-300">
+  <section class="bg-gray-100 py-16 transition-colors duration-300">
     <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-4 text-navy dark:text-blue-300">Core NAICS Codes</h2>
+      <h2 class="text-3xl font-bold mb-4 text-navy">Core NAICS Codes</h2>
       <button id="naics-toggle" class="text-gold font-semibold underline hover:text-yellow-600 mb-4">Show/Hide Full List</button>
-      <div id="naics-list" class="hidden max-w-4xl mx-auto text-left text-sm bg-white dark:bg-gray-800 p-6 rounded shadow">
-        <ul class="list-disc ml-6 space-y-1 dark:text-gray-300">
+      <div id="naics-list" class="hidden max-w-4xl mx-auto text-left text-sm bg-white p-6 rounded shadow">
+        <ul class="list-disc ml-6 space-y-1">
           <li>561210 – Facilities Support Services</li>
           <li>236118 – Residential Remodelers</li>
           <li>236220 – Commercial and Institutional Building Construction</li>
@@ -111,20 +157,21 @@
     </div>
   </section>
 
-  <footer class="bg-navy dark:bg-gray-900 text-white py-8 text-center">
+  <footer class="bg-navy text-white py-8 text-center">
     <p class="text-sm text-gray-300">&copy; 2025 Fluid Investment Group. All rights reserved.</p>
   </footer>
 
-  <!-- Lightbox PDF Modal -->
+  <!-- Improved PDF Modal -->
   <div id="pdfModal" class="modal">
-    <span class="modal-close" onclick="document.getElementById('pdfModal').style.display='none'">&times;</span>
+    <span class="modal-close" onclick="closePdfModal()">&times;</span>
     <div class="modal-content">
-      <iframe src="/capability-statement.pdf"></iframe>
+      <iframe id="pdfFrame" src="" title="Capability Statement PDF"></iframe>
     </div>
   </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      // Contact information
       const contacts = [
         { role: "Primary Contact", name: "Justin Wessels", phone: "+1 404-593-0830", email: "justin@fluidinvestmentgroup.com" },
         { role: "Support", name: "Yusuf De Villiers", phone: "+1 352-234-3005", email: "support@fluidinvestmentgroup.com" }
@@ -133,33 +180,98 @@
       const uei = "CLNFQN8C4CT6";
       const cage = "9F8L6";
 
+      // Populate contacts
       const contactContainer = document.getElementById("contacts");
       contacts.forEach(({ role, name, phone, email }) => {
         const card = document.createElement("div");
-        card.className = "bg-white dark:bg-gray-700 p-6 border rounded-lg shadow text-left";
+        card.className = "bg-white p-6 border rounded-lg shadow text-left";
         card.innerHTML = `
-          <h3 class="text-lg font-bold text-navy dark:text-white mb-1">${role}</h3>
-          <p class="text-gray-800 dark:text-gray-200 font-semibold">${name}</p>
-          <p class="text-gray-600 dark:text-gray-300"><i class='fas fa-envelope text-gold'></i> <a href="mailto:${email}">${email}</a></p>
-          <p class="text-gray-600 dark:text-gray-300"><i class='fas fa-phone text-gold'></i> <a href="tel:${phone.replace(/[^\d]/g, '')}">${phone}</a></p>
+          <h3 class="text-lg font-bold text-navy mb-1">${role}</h3>
+          <p class="text-gray-800 font-semibold">${name}</p>
+          <p class="text-gray-600"><i class='fas fa-envelope text-gold'></i> <a href="mailto:${email}">${email}</a></p>
+          <p class="text-gray-600"><i class='fas fa-phone text-gold'></i> <a href="tel:${phone.replace(/[^\d]/g, '')}">${phone}</a></p>
         `;
         contactContainer.appendChild(card);
       });
       document.getElementById("address").textContent = address;
       document.getElementById("uei-cage").textContent = `SAM.gov Registered | Exp. Mar 1, 2026 | UEI: ${uei} | CAGE: ${cage}`;
 
+      // NAICS toggle
       document.getElementById("naics-toggle").addEventListener("click", () => {
         document.getElementById("naics-list").classList.toggle("hidden");
       });
 
-      const toggleButton = document.getElementById("darkToggle");
+      // Handle dark mode
+      const darkToggle = document.getElementById("darkToggle");
+      const darkModeIcon = document.getElementById("darkModeIcon");
+      const darkModeText = document.getElementById("darkModeText");
+      
+      // Check for user preference in localStorage
       const isDark = localStorage.getItem("darkMode") === "true";
-      if (isDark) document.documentElement.classList.add("dark");
+      if (isDark) {
+        document.documentElement.classList.add("dark");
+        darkModeIcon.classList.remove("fa-moon");
+        darkModeIcon.classList.add("fa-sun");
+        darkModeText.textContent = "Light Mode";
+      }
 
-      toggleButton.addEventListener("click", () => {
-        const dark = document.documentElement.classList.toggle("dark");
-        localStorage.setItem("darkMode", dark);
+      // Dark mode toggle functionality
+      darkToggle.addEventListener("click", () => {
+        // Toggle dark class on html element
+        const isDarkMode = document.documentElement.classList.toggle("dark");
+        
+        // Update icon and text
+        if (isDarkMode) {
+          darkModeIcon.classList.remove("fa-moon");
+          darkModeIcon.classList.add("fa-sun");
+          darkModeText.textContent = "Light Mode";
+        } else {
+          darkModeIcon.classList.remove("fa-sun");
+          darkModeIcon.classList.add("fa-moon");
+          darkModeText.textContent = "Dark Mode";
+        }
+        
+        // Save preference to localStorage
+        localStorage.setItem("darkMode", isDarkMode);
       });
+    });
+
+    // PDF Modal functions
+    function openPdfModal() {
+      const modal = document.getElementById("pdfModal");
+      const pdfFrame = document.getElementById("pdfFrame");
+      
+      // Set the source if not already set
+      if (!pdfFrame.src || pdfFrame.src === window.location.href) {
+        pdfFrame.src = "/capability-statement.pdf";
+      }
+      
+      modal.style.display = "block";
+      
+      // Prevent scrolling of the background when modal is open
+      document.body.style.overflow = "hidden";
+    }
+
+    function closePdfModal() {
+      document.getElementById("pdfModal").style.display = "none";
+      
+      // Re-enable scrolling
+      document.body.style.overflow = "auto";
+    }
+
+    // Close modal when clicking outside of content
+    window.onclick = function(event) {
+      const modal = document.getElementById("pdfModal");
+      if (event.target === modal) {
+        closePdfModal();
+      }
+    }
+
+    // Allow ESC key to close the modal
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        closePdfModal();
+      }
     });
   </script>
 </body>
