@@ -99,26 +99,69 @@
     .modal-close:hover {
       color: #ecc94b;
     }
+    
+    /* Mobile-specific styles */
+    @media (max-width: 640px) {
+      .btn-view {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      
+      .btn-download {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 400px;
+        margin: 10px auto 0 auto;
+      }
+      
+      .btn-download-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 50px;
+        height: 50px;
+      }
+    }
   </style>
 </head>
 <body class="font-sans antialiased bg-white text-gray-800 transition-colors duration-300">
   <div class="fixed top-4 right-4 z-50">
     <button id="darkToggle" class="bg-gold text-navy font-bold py-2 px-4 rounded shadow hover:bg-yellow-400 transition">
-      <i id="darkModeIcon" class="fas fa-moon"></i> <span id="darkModeText">Dark Mode</span>
+      <i id="darkModeIcon" class="fas fa-moon"></i> <span id="darkModeText" class="hidden sm:inline">Dark Mode</span>
     </button>
   </div>
 
-  <!-- Reduced vertical padding from py-24 to py-12 -->
+  <!-- Header section with exact mobile layout matching -->
   <header class="hero-pattern text-white py-12 fade-in text-center">
     <div class="container mx-auto px-4">
       <h1 class="text-3xl md:text-4xl font-bold mb-2">FLUID INVESTMENT GROUP</h1>
-      <p class="text-lg md:text-xl mb-4 text-gray-200">Government Contracting • Subcontracting • Consulting • Project Management</p>
-      <button onclick="openPdfModal()" class="bg-white text-navy font-bold py-2 px-5 rounded-md hover:bg-gray-100 transition duration-300 mr-2">
-        <i class="fas fa-eye mr-2"></i> View Capability Statement
-      </button>
-      <a href="/capability-statement.pdf" download class="bg-white text-navy font-bold py-2 px-5 rounded-md hover:bg-gray-100 transition duration-300">
-        <i class="fas fa-download mr-2"></i> Download PDF
-      </a>
+      <p class="text-lg md:text-xl mb-6 text-gray-200">Government Contracting • Subcontracting • Consulting • Project Management</p>
+      
+      <!-- Mobile layout matches screenshot exactly - View button first, then Download button below -->
+      <div class="relative">
+        <button onclick="openPdfModal()" class="btn-view bg-white text-navy font-bold py-3 px-6 rounded-md hover:bg-gray-100 transition duration-300 mb-2 sm:mb-0 sm:mr-2">
+          <i class="fas fa-eye mr-2"></i> View Capability Statement
+        </button>
+        
+        <!-- For desktop - place the download button next to the view button -->
+        <a href="/capability-statement.pdf" download class="hidden sm:inline-flex bg-white text-navy font-bold py-3 px-6 rounded-md hover:bg-gray-100 transition duration-300">
+          <i class="fas fa-download mr-2"></i> Download PDF
+        </a>
+        
+        <!-- For mobile only - place the download button below the view button as in screenshot -->
+        <a href="/capability-statement.pdf" download class="btn-download bg-white text-navy font-bold py-3 px-6 rounded-md hover:bg-gray-100 transition duration-300 sm:hidden">
+          <i class="fas fa-download mr-2"></i> Download PDF
+        </a>
+      </div>
     </div>
   </header>
 
