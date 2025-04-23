@@ -3,10 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Meta Tags -->
   <title>Fluid Investment Group - Government Contracting Solutions</title>
-  <link rel="icon" href="/favicon.png" />
+  <meta name="description" content="Fluid Investment Group provides government contracting, subcontracting, consulting, and project management services. SAM.gov registered with UEI: CLNFQN8C4CT6, CAGE: 9F8L6." />
+  <meta name="keywords" content="government contracting, subcontracting, Fluid Investment Group, project management, consulting, SAM.gov registered" />
+  <meta name="author" content="Fluid Investment Group" />
+  
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="Fluid Investment Group - Government Contracting Solutions" />
+  <meta property="og:description" content="Government contracting, subcontracting, consulting, and project management services." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://fluidinvestmentgroup.com" />
+  <meta property="og:image" content="/logo.png" />
+  
+  <!-- Favicon Tags -->
+  <link rel="icon" type="image/png" href="/logo.png" />
+  <link rel="apple-touch-icon" href="/logo.png" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://fluidinvestmentgroup.com" />
+  
+  <!-- External CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  
   <style>
     .bg-navy { background-color: #1a365d; }
     .text-navy { color: #1a365d; }
@@ -171,6 +192,42 @@
       <iframe id="pdfFrame" src="" title="Capability Statement PDF"></iframe>
     </div>
   </div>
+
+  <!-- Structured Data for SEO (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Fluid Investment Group",
+    "url": "https://fluidinvestmentgroup.com",
+    "logo": "/logo.png",
+    "description": "Government contracting, subcontracting, consulting, and project management services.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "9752 NW Highway 225",
+      "addressLocality": "Ocala",
+      "addressRegion": "FL",
+      "postalCode": "34482-1161",
+      "addressCountry": "US"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+1-404-593-0830",
+        "contactType": "Primary Contact",
+        "email": "justin@fluidinvestmentgroup.com",
+        "name": "Justin Wessels"
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+1-352-234-3005",
+        "contactType": "Support",
+        "email": "support@fluidinvestmentgroup.com",
+        "name": "Yusuf De Villiers"
+      }
+    ]
+  }
+  </script>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
