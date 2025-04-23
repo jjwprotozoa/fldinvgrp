@@ -54,6 +54,43 @@
     .dark .text-navy { color: #90cdf4 !important; }
     .dark .border { border-color: #4a5568 !important; }
     
+    /* Button container styles */
+    .button-container {
+      display: flex;
+      flex-direction: column; /* Default for mobile: stacked buttons */
+      gap: 16px; /* Space between buttons */
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    /* Desktop layout */
+    @media (min-width: 640px) {
+      .button-container {
+        flex-direction: row; /* Side by side on desktop */
+        justify-content: center;
+        max-width: none;
+        width: auto;
+      }
+    }
+
+    .action-button {
+      padding: 12px 20px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-weight: bold;
+      width: 100%; /* Full width on mobile */
+      background-color: white;
+      color: #1a365d;
+      transition: all 0.3s ease;
+    }
+
+    .action-button:hover {
+      background-color: #f8f9fa;
+    }
+
     /* Improved modal styling */
     .modal { 
       display: none; 
@@ -99,38 +136,6 @@
     .modal-close:hover {
       color: #ecc94b;
     }
-    
-    /* Mobile-specific styles */
-    @media (max-width: 640px) {
-      .btn-view {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
-      }
-      
-      .btn-download {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        max-width: 400px;
-        margin: 10px auto 0 auto;
-      }
-      
-      .btn-download-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        width: 50px;
-        height: 50px;
-      }
-    }
   </style>
 </head>
 <body class="font-sans antialiased bg-white text-gray-800 transition-colors duration-300">
@@ -140,32 +145,25 @@
     </button>
   </div>
 
-  <!-- Header section with exact mobile layout matching -->
+  <!-- Header section with responsive buttons -->
   <header class="hero-pattern text-white py-12 fade-in text-center">
     <div class="container mx-auto px-4">
       <h1 class="text-3xl md:text-4xl font-bold mb-2">FLUID INVESTMENT GROUP</h1>
       <p class="text-lg md:text-xl mb-6 text-gray-200">Government Contracting • Subcontracting • Consulting • Project Management</p>
       
-      <!-- Mobile layout matches screenshot exactly - View button first, then Download button below -->
-      <div class="relative">
-        <button onclick="openPdfModal()" class="btn-view bg-white text-navy font-bold py-3 px-6 rounded-md hover:bg-gray-100 transition duration-300 mb-2 sm:mb-0 sm:mr-2">
+      <!-- Responsive button container -->
+      <div class="button-container">
+        <button onclick="openPdfModal()" class="action-button">
           <i class="fas fa-eye mr-2"></i> View Capability Statement
         </button>
-        
-        <!-- For desktop - place the download button next to the view button -->
-        <a href="/capability-statement.pdf" download class="hidden sm:inline-flex bg-white text-navy font-bold py-3 px-6 rounded-md hover:bg-gray-100 transition duration-300">
-          <i class="fas fa-download mr-2"></i> Download PDF
-        </a>
-        
-        <!-- For mobile only - place the download button below the view button as in screenshot -->
-        <a href="/capability-statement.pdf" download class="btn-download bg-white text-navy font-bold py-3 px-6 rounded-md hover:bg-gray-100 transition duration-300 sm:hidden">
+        <a href="/capability-statement.pdf" download class="action-button">
           <i class="fas fa-download mr-2"></i> Download PDF
         </a>
       </div>
     </div>
   </header>
 
-  <!-- Reduced padding from py-16 to py-10 -->
+  <!-- Contact Info Section -->
   <section class="py-10 bg-white transition-colors duration-300">
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-2xl font-bold mb-6 text-navy">Contact Info</h2>
@@ -175,7 +173,7 @@
     </div>
   </section>
 
-  <!-- Reduced padding from py-16 to py-10 -->
+  <!-- NAICS Codes Section -->
   <section class="bg-gray-100 py-10 transition-colors duration-300">
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-2xl font-bold mb-4 text-navy">Core NAICS Codes</h2>
