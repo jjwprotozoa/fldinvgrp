@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fluid Investment Group - Government Contracting Solutions</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <meta name="description" content="Fluid Investment Group is a SAM.gov registered government contractor offering subcontracting, consulting, and project management solutions." />
+  <meta name="keywords" content="government contracting, SAM.gov, subcontracting, project management, UEI CLNFQN8C4CT6, CAGE 9F8L6, NAICS, Facilities Support, Janitorial, Electrical Contractors, Engineering Services" />
+  <meta name="author" content="Fluid Investment Group" />
+  <style>
+    .bg-navy { background-color: #1a365d; }
+    .text-navy { color: #1a365d; }
+    .bg-gold { background-color: #ecc94b; }
+    .text-gold { color: #ecc94b; }
+    .hero-pattern {
+      background-color: #1a365d;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    .fade-in {
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Dark mode styles */
+    .dark body {
+      background-color: #1a202c;
+      color: #f7fafc;
+    }
+    .dark .bg-white {
+      background-color: #2d3748 !important;
+    }
+    .dark .text-gray-800 {
+      color: #f7fafc !important;
+    }
+    .dark .text-gray-600 {
+      color: #e2e8f0 !important;
+    }
+    .dark .text-navy {
+      color: #90cdf4 !important;
+    }
+    .dark .border {
+      border-color: #4a5568 !important;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const contacts = [
+        {
+          role: "Primary Contact",
+          name: "Justin Wessels",
+          phone: "+1 404-593-0830",
+          email: "justin@fluidinvestmentgroup.com"
+        },
+        {
+          role: "Support",
+          name: "Yusuf De Villiers",
+          phone: "+1 352-234-3005",
+          email: "support@fluidinvestmentgroup.com"
+        }
+      ];
+      const address = "9752 NW Highway 225, Ocala, Florida 34482-1161";
+      const uei = "CLNFQN8C4CT6";
+      const cage = "9F8L6";
+
+      // Populate contact information
+      const contactContainer = document.getElementById("contacts");
+      contacts.forEach(({ role, name, phone, email }) => {
+        const card = document.createElement("div");
+        card.className = "bg-white dark:bg-gray-700 p-6 border rounded-lg shadow text-left";
+        card.innerHTML = `
+          <h3 class="text-lg font-bold text-navy dark:text-white mb-1">${role}</h3>
+          <p class="text-gray-800 dark:text-gray-200 font-semibold">${name}</p>
+          <p class="text-gray-600 dark:text-gray-300"><i class='fas fa-envelope text-gold'></i> <a href="mailto:${email}" class="hover:underline">${email}</a></p>
+          <p class="text-gray-600 dark:text-gray-300"><i class='fas fa-phone text-gold'></i> <a href="tel:${phone.replace(/[^\d]/g, '')}" class="hover:underline">${phone}</a></p>
+        `;
+        contactContainer.appendChild(card);
+      });
+
+      // Set address and registration info
+      document.getElementById("address").textContent = address;
+      document.getElementById("uei-cage").textContent = `SAM.gov Registered | Exp. Mar 1, 2026 | UEI: ${uei} | CAGE: ${cage}`;
+
+      // Set up NAICS toggle
+      const accordionToggle = document.getElementById("naics-toggle");
+      const accordionContent = document.getElementById("naics-list");
+      accordionToggle.addEventListener("click", () => {
+        accordionContent.classList.toggle("hidden");
+      });
+
+      // Theme toggle functionality
+      const toggleButton = document.getElementById("darkToggle");
+      
+      // Check for saved preference
+      const isDarkMode = localStorage.getItem("darkMode") === "true";
+      
+      // Apply initial theme
+      if (isDarkMode) {
+        document.documentElement.classList.add("dark");
+        document.body.classList.add("bg-gray-900", "text-white");
+        toggleButton.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+      } else {
+        toggleButton.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+      }
+      
+      // Toggle theme
+      toggleButton.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.toggle("dark");
+        document.body.classList.toggle("bg-gray-900");
+        document.body.classList.toggle("text-white");
+        
+        // Update button text based on current mode
+        if (isDark) {
+          toggleButton.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+        } else {
+          toggleButton.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+        }
+        
+        // Save preference
+        localStorage.setItem("darkMode", isDark);
+      });
+    });
+  </script>
+</head>
+<body class="font-sans antialiased bg-white text-gray-800 transition-colors duration-300 dark:bg-gray-900 dark:text-white">
+  <div class="fixed top-4 right-4 z-50">
+    <button id="darkToggle" class="bg-gold text-navy font-bold py-2 px-4 rounded shadow hover:bg-yellow-400 transition">
+      <i class="fas fa-moon"></i> Dark Mode
+    </button>
+  </div>
+
+  <header class="hero-pattern text-white py-24 fade-in">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">FLUID INVESTMENT GROUP</h1>
+      <p class="text-xl md:text-2xl mb-6 text-gray-200">Government Contracting • Subcontracting • Consulting • Project Management</p>
+      <a href="/capability-statement.pdf" class="bg-white text-navy font-bold py-3 px-6 rounded-md hover:bg-gray-100 transition duration-300">Download Capability Statement</a>
+    </div>
+  </header>
+
+  <section class="py-16 bg-white dark:bg-gray-800 transition-colors duration-300">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center text-navy dark:text-blue-300">Contact Info</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto" id="contacts"></div>
+      <div class="mt-10 text-center">
+        <p><i class="fas fa-map-marker-alt text-gold"></i> <span id="address" class="dark:text-gray-300"></span></p>
+        <p class="text-sm text-gray-500 dark:text-gray-400 mt-2" id="uei-cage"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-100 dark:bg-gray-700 py-16 transition-colors duration-300">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4 text-navy dark:text-blue-300">Core NAICS Codes</h2>
+      <button id="naics-toggle" class="text-gold font-semibold underline hover:text-yellow-600 mb-4">Show/Hide Full List</button>
+      <div id="naics-list" class="hidden max-w-4xl mx-auto text-left text-sm bg-white dark:bg-gray-800 p-6 rounded shadow">
+        <ul class="list-disc ml-6 space-y-1 dark:text-gray-300">
+          <li>561210 – Facilities Support Services</li>
+          <li>236118 – Residential Remodelers</li>
+          <li>236220 – Commercial and Institutional Building Construction</li>
+          <li>238210 – Electrical Contractors and Other Wiring Installation Contractors</li>
+          <li>238220 – Plumbing, Heating, and Air-Conditioning Contractors</li>
+          <li>238910 – Site Preparation Contractors</li>
+          <li>238990 – All Other Specialty Trade Contractors</li>
+          <li>423430 – Computer and Peripheral Equipment Wholesalers</li>
+          <li>541330 – Engineering Services</li>
+          <li>541611 – Administrative & General Management Consulting</li>
+          <li>561320 – Temporary Help Services</li>
+          <li>561720 – Janitorial Services</li>
+          <li>561730 – Landscaping Services</li>
+          <li>562111 – Solid Waste Collection</li>
+          <li>811310 – Commercial & Industrial Equipment Maintenance</li>
+          <li>423610 – Electrical Apparatus and Equipment, Wiring Supplies, and Related Equipment Merchant Wholesalers</li>
+          <li>425120 – Wholesale Trade Agents and Brokers</li>
+          <li>541310 – Architectural Services</li>
+          <li>541430 – Graphic Design Services</li>
+          <li>541511 – Custom Computer Programming Services</li>
+          <li>541512 – Computer Systems Design Services</li>
+          <li>541513 – Computer Facilities Management Services</li>
+          <li>541519 – Other Computer Related Services</li>
+          <li>541613 – Marketing Consulting Services</li>
+          <li>541614 – Process, Physical Distribution, and Logistics Consulting Services</li>
+          <li>541618 – Other Management Consulting Services</li>
+          <li>541690 – Other Scientific and Technical Consulting Services</li>
+          <li>541714 – Research and Development in Biotechnology (Except Nanobiotechnology)</li>
+          <li>541990 – All Other Professional, Scientific, and Technical Services</li>
+          <li>561110 – Office Administrative Services</li>
+          <li>561499 – All Other Business Support Services</li>
+          <li>562119 – Other Waste Collection</li>
+          <li>562212 – Solid Waste Landfill</li>
+          <li>562219 – Other Nonhazardous Waste Treatment and Disposal</li>
+          <li>562920 – Materials Recovery Facilities</li>
+          <li>562991 – Septic Tank and Related Services</li>
+          <li>562998 – All Other Miscellaneous Waste Management Services</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-navy dark:bg-gray-900 text-white py-8 text-center transition-colors duration-300">
+    <p class="text-sm text-gray-300">&copy; 2025 Fluid Investment Group. All rights reserved.</p>
+  </footer>
+</body>
+</html>
