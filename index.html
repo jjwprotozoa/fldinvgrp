@@ -3,31 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- Cache control -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
+  <title>Fluid Investment Group - Government Contracting Solutions</title>
   
   <!-- SEO Meta Tags -->
-  <title>Fluid Investment Group - Government Contracting Solutions</title>
-  <meta name="description" content="Fluid Investment Group provides government contracting, subcontracting, consulting, and project management services. SAM.gov registered with UEI: CLNFQN8C4CT6, CAGE: 9F8L6." />
-  <meta name="keywords" content="government contracting, subcontracting, Fluid Investment Group, project management, consulting, SAM.gov registered" />
-  <meta name="author" content="Fluid Investment Group" />
+  <meta name="description" content="Fluid Investment Group LLC offers professional government contracting, facilities management, technical services, and consulting with SAM.gov registration." />
+  <meta name="keywords" content="government contracting, facilities management, waste management, technical services, consulting, SAM.gov registered contractor, Florida contractor, project management, NAICS 561210, NAICS 236220" />
+  <meta name="author" content="Fluid Investment Group LLC" />
   
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="Fluid Investment Group - Government Contracting Solutions" />
-  <meta property="og:description" content="Government contracting, subcontracting, consulting, and project management services." />
+  <meta property="og:description" content="Professional government contracting, facilities management, technical services and consulting. SAM.gov registered." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://fluidinvestmentgroup.com" />
-  <meta property="og:image" content="/logo.png" />
+  <meta property="og:image" content="https://fluidinvestmentgroup.com/logo.png" />
   
-  <!-- Favicon Tags -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="/logo.png" />
-  <link rel="apple-touch-icon" href="/logo.png" />
-  
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://fluidinvestmentgroup.com" />
   
   <!-- External CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
@@ -36,403 +27,816 @@
   <style>
     .bg-navy { background-color: #1a365d; }
     .text-navy { color: #1a365d; }
+    .border-navy { border-color: #1a365d; }
     .bg-gold { background-color: #ecc94b; }
     .text-gold { color: #ecc94b; }
+    .border-gold { border-color: #ecc94b; }
     .hero-pattern {
       background-color: #1a365d;
       background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
     html { scroll-behavior: smooth; }
-    .fade-in { animation: fadeIn 1s ease-in; }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    /* Dark mode classes */
-    .dark { color-scheme: dark; }
-    .dark body { background-color: #1a202c; color: #f7fafc; }
-    .dark .bg-white { background-color: #2d3748 !important; }
-    .dark .bg-gray-100 { background-color: #374151 !important; }
-    .dark .text-gray-800 { color: #f7fafc !important; }
-    .dark .text-gray-600, .dark .text-gray-700 { color: #e2e8f0 !important; }
-    .dark .text-gray-500 { color: #cbd5e0 !important; }
-    .dark .text-navy { color: #90cdf4 !important; }
-    .dark .border { border-color: #4a5568 !important; }
     
-    /* Button container styles for mobile & desktop */
-    @media (max-width: 640px) {
-      .button-container {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        max-width: 350px;
-        margin: 0 auto;
-        gap: 10px;
-      }
-      
-      .action-button {
-        width: 100%;
-        padding: 12px 16px;
-        border-radius: 6px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: white;
-        color: #1a365d;
-        font-weight: bold;
-        text-decoration: none;
-        transition: all 0.2s ease;
-      }
+    /* Email obfuscation styles */
+    .email-protection {
+      unicode-bidi: bidi-override;
+      direction: rtl;
+      text-align: left;
+      position: relative;
+      cursor: pointer;
     }
     
-    /* Desktop button styles */
-    @media (min-width: 641px) {
-      .button-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 20px;
-      }
-      
-      .action-button {
-        padding: 12px 24px;
-        border-radius: 6px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background-color: white;
-        color: #1a365d;
-        font-weight: bold;
-        text-decoration: none;
-        transition: all 0.2s ease;
-      }
+    /* Contact card styling */
+    .contact-card {
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    
-    .action-button:hover {
-      background-color: #f8f9fa;
-      transform: translateY(-1px);
+    .contact-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     }
-    
-    /* Spacing adjustments */
-    .section-spacing {
-      margin-bottom: 40px;
+    .contact-icon {
+      transition: transform 0.2s;
     }
-    
-    /* Contact cards for mobile */
-    @media (max-width: 768px) {
-      .contact-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-    }
-    
-    @media (min-width: 769px) {
-      .contact-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 32px;
-      }
+    .contact-card:hover .contact-icon {
+      transform: scale(1.1);
     }
 
-    /* Improved modal styling */
-    .modal { 
-      display: none; 
-      position: fixed; 
-      z-index: 100; 
-      top: 0; 
-      left: 0; 
-      width: 100%; 
-      height: 100%; 
-      background: rgba(0,0,0,0.85); 
-      overflow: auto;
-    }
-    .modal-content { 
-      margin: 2% auto; 
-      width: 90%; 
-      height: 90%; 
-      max-width: 1200px; 
-      background: #fff; 
-      border-radius: 8px; 
-      overflow: hidden;
+    /* Tooltip styling for sticky navigation */
+    .tooltip-container {
       position: relative;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    }
-    .dark .modal-content {
-      background: #2d3748;
-    }
-    .modal iframe { 
-      width: 100%; 
-      height: 100%; 
-      border: none;
-    }
-    .modal-close { 
-      position: absolute; 
-      top: 15px; 
-      right: 35px; 
-      color: white; 
-      font-size: 35px; 
-      font-weight: bold;
-      cursor: pointer; 
-      z-index: 101;
-      text-shadow: 0 0 5px rgba(0,0,0,0.5);
-    }
-    .modal-close:hover {
-      color: #ecc94b;
     }
     
-    /* Section spacing */
-    .address-section {
-      text-align: center;
-      margin-bottom: 60px;
+    .tooltip {
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(26, 54, 93, 0.9);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      margin-left: 0.75rem;
+      font-size: 0.875rem;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s;
+      pointer-events: none;
     }
     
-    .naics-section {
-      padding-top: 40px;
-      padding-bottom: 60px;
+    .tooltip::before {
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-right: 6px solid rgba(26, 54, 93, 0.9);
+    }
+    
+    .tooltip-container:hover .tooltip {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    /* Accordion styles */
+    .accordion-button {
+      transition: all 0.2s;
+    }
+    
+    .accordion-button.active {
+      background-color: #f3f4f6;
+    }
+    
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    
+    .accordion-content.active {
+      max-height: 1000px;
     }
   </style>
+  
+  <!-- Script for email protection -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Function to decode and open email links
+      window.decodeEmail = function(encodedEmail) {
+        let email = '';
+        const encodedParts = encodedEmail.split('');
+        for (let i = encodedParts.length - 1; i >= 0; i--) {
+          email += encodedParts[i];
+        }
+        window.location.href = 'mailto:' + email;
+      };
+    });
+  </script>
 </head>
-<body class="font-sans antialiased bg-white text-gray-800 transition-colors duration-300">
-  <div class="fixed top-4 right-4 z-50">
-    <button id="darkToggle" class="bg-gold text-navy font-bold py-2 px-4 rounded shadow hover:bg-yellow-400 transition">
-      <i id="darkModeIcon" class="fas fa-moon"></i> <span id="darkModeText" class="hidden sm:inline">Dark Mode</span>
-    </button>
+<body class="font-sans antialiased bg-white text-gray-800">
+  <!-- Sticky Navigation Buttons -->
+  <div class="fixed left-0 top-1/2 transform -translate-y-1/2 z-40 hidden md:block">
+    <div class="flex flex-col space-y-2">
+      <a href="#overview" class="bg-navy hover:bg-opacity-90 text-white p-3 rounded-r-lg shadow-lg transition-all hover:translate-x-1 tooltip-container">
+        <i class="fas fa-info-circle"></i>
+        <span class="tooltip">Overview</span>
+      </a>
+      <a href="#competencies" class="bg-navy hover:bg-opacity-90 text-white p-3 rounded-r-lg shadow-lg transition-all hover:translate-x-1 tooltip-container">
+        <i class="fas fa-list-check"></i>
+        <span class="tooltip">Competencies</span>
+      </a>
+      <a href="#differentiators" class="bg-navy hover:bg-opacity-90 text-white p-3 rounded-r-lg shadow-lg transition-all hover:translate-x-1 tooltip-container">
+        <i class="fas fa-star"></i>
+        <span class="tooltip">Differentiators</span>
+      </a>
+      <a href="#naics-codes" class="bg-navy hover:bg-opacity-90 text-white p-3 rounded-r-lg shadow-lg transition-all hover:translate-x-1 tooltip-container">
+        <i class="fas fa-table"></i>
+        <span class="tooltip">NAICS Codes</span>
+      </a>
+      <a href="#contact" class="bg-navy hover:bg-opacity-90 text-white p-3 rounded-r-lg shadow-lg transition-all hover:translate-x-1 tooltip-container">
+        <i class="fas fa-address-card"></i>
+        <span class="tooltip">Contact</span>
+      </a>
+    </div>
   </div>
 
-  <!-- Header section with responsive buttons -->
-  <header class="hero-pattern text-white py-12 fade-in text-center">
+  <header class="hero-pattern text-white py-12 text-center">
     <div class="container mx-auto px-4">
-      <h1 class="text-3xl md:text-4xl font-bold mb-2">FLUID INVESTMENT GROUP</h1>
-      <p class="text-lg md:text-xl mb-6 text-gray-200">Government Contracting • Subcontracting • Consulting • Project Management</p>
-      
-      <!-- Responsive button container -->
-      <div class="button-container">
-        <button onclick="openPdfModal()" class="action-button">
+      <h1 class="text-4xl font-bold"><span class="text-gold">FLUID INVESTMENT GROUP</span> LLC</h1>
+      <p class="text-lg mt-2">Government Contracting • Subcontracting • Consulting • Project Management</p>
+      <p class="text-sm mt-2 text-gray-200">SAM.gov Registered | Exp. Mar 1, 2026 | UEI: CLNFQN8C4CT6 | CAGE: 9F8L6</p>
+      <div class="mt-6 button-container flex flex-col sm:flex-row gap-4 justify-center">
+        <button onclick="openPdfModal()" class="action-button bg-white text-navy px-4 py-2 rounded font-semibold shadow hover:bg-gray-100">
           <i class="fas fa-eye mr-2"></i> View Capability Statement
         </button>
-        <a href="/capability-statement.pdf" download class="action-button">
+        <a href="/capability-statement.pdf" download class="action-button bg-white text-navy px-4 py-2 rounded font-semibold shadow hover:bg-gray-100">
           <i class="fas fa-download mr-2"></i> Download PDF
         </a>
       </div>
     </div>
   </header>
 
-  <!-- Contact Info Section with improved spacing -->
-  <section class="py-12 bg-white transition-colors duration-300 section-spacing">
-    <div class="container mx-auto px-4">
-      <h2 class="text-2xl font-bold mb-8 text-navy text-center">Contact Info</h2>
-      <div class="contact-grid max-w-4xl mx-auto" id="contacts">
-        <!-- Contact cards will be dynamically inserted here -->
+  <section id="overview" class="py-12 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-2xl font-bold mb-6 text-navy">Company Overview</h2>
+      <p class="mb-4">Fluid Investment Group LLC is a registered government contracting entity specializing in project management, consulting, and subcontracting support services. Based in Ocala, Florida, we provide efficient, reliable, and high-quality solutions across a wide range of projects for both public and private sector partners nationwide.</p>
+      <p>Our team brings professional expertise in facilities management, technical services, and administrative support to deliver cost-effective solutions that meet and exceed client expectations.</p>
+    </div>
+  </section>
+
+  <!-- Updated Core Competencies Section -->
+  <section id="competencies" class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-2xl font-bold mb-8 text-navy text-center">Core Competencies</h2>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Facilities Support Services -->
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="flex items-center mb-3">
+            <div class="bg-navy rounded-full p-2 mr-3">
+              <i class="fas fa-building text-gold"></i>
+            </div>
+            <h3 class="font-semibold text-navy text-lg">Facilities Support Services</h3>
+          </div>
+          <ul class="list-disc ml-6 space-y-1 text-gray-700">
+            <li>Building maintenance and management</li>
+            <li>Grounds and landscaping maintenance</li>
+            <li>Janitorial and cleaning services</li>
+            <li>Waste management solutions</li>
+            <li>Warehousing and storage services</li>
+            <li>Commercial equipment maintenance</li>
+          </ul>
+        </div>
+        
+        <!-- Construction Services -->
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="flex items-center mb-3">
+            <div class="bg-navy rounded-full p-2 mr-3">
+              <i class="fas fa-hard-hat text-gold"></i>
+            </div>
+            <h3 class="font-semibold text-navy text-lg">Construction Services</h3>
+          </div>
+          <ul class="list-disc ml-6 space-y-1 text-gray-700">
+            <li>Residential remodeling</li>
+            <li>Commercial and institutional building</li>
+            <li>Electrical contracting</li>
+            <li>Plumbing, heating, and air-conditioning</li>
+            <li>Site preparation and development</li>
+            <li>Specialty trade contracting</li>
+          </ul>
+        </div>
+        
+        <!-- Technical Services -->
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="flex items-center mb-3">
+            <div class="bg-navy rounded-full p-2 mr-3">
+              <i class="fas fa-laptop-code text-gold"></i>
+            </div>
+            <h3 class="font-semibold text-navy text-lg">Technical Services</h3>
+          </div>
+          <ul class="list-disc ml-6 space-y-1 text-gray-700">
+            <li>IT support and computer systems design</li>
+            <li>Network management and support</li>
+            <li>Software development and implementation</li>
+            <li>Technical consulting</li>
+            <li>Engineering and technical support</li>
+            <li>Computer facilities management</li>
+          </ul>
+        </div>
+        
+        <!-- Management Consulting -->
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="flex items-center mb-3">
+            <div class="bg-navy rounded-full p-2 mr-3">
+              <i class="fas fa-tasks text-gold"></i>
+            </div>
+            <h3 class="font-semibold text-navy text-lg">Management Consulting</h3>
+          </div>
+          <ul class="list-disc ml-6 space-y-1 text-gray-700">
+            <li>Administrative management</li>
+            <li>Process and logistics consulting</li>
+            <li>Project management</li>
+            <li>Business operations support</li>
+            <li>Marketing and business development</li>
+            <li>Policy development and review</li>
+          </ul>
+        </div>
+        
+        <!-- Architectural & Design Services (NEW) -->
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="flex items-center mb-3">
+            <div class="bg-navy rounded-full p-2 mr-3">
+              <i class="fas fa-drafting-compass text-gold"></i>
+            </div>
+            <h3 class="font-semibold text-navy text-lg">Architectural & Design</h3>
+          </div>
+          <ul class="list-disc ml-6 space-y-1 text-gray-700">
+            <li>Architectural planning and consulting</li>
+            <li>Engineering services</li>
+            <li>Graphic design services</li>
+            <li>Technical documentation</li>
+            <li>Visual branding and marketing materials</li>
+          </ul>
+        </div>
+        
+        <!-- Supply Chain & Distribution (NEW) -->
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="flex items-center mb-3">
+            <div class="bg-navy rounded-full p-2 mr-3">
+              <i class="fas fa-truck text-gold"></i>
+            </div>
+            <h3 class="font-semibold text-navy text-lg">Supply Chain & Distribution</h3>
+          </div>
+          <ul class="list-disc ml-6 space-y-1 text-gray-700">
+            <li>Computer and peripheral equipment</li>
+            <li>Electrical equipment wholesale</li>
+            <li>Trade agent and broker services</li>
+            <li>Supply chain logistics</li>
+            <li>Inventory management</li>
+          </ul>
+        </div>
+        
+        <!-- Scientific & Research Services (NEW) -->
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="flex items-center mb-3">
+            <div class="bg-navy rounded-full p-2 mr-3">
+              <i class="fas fa-flask text-gold"></i>
+            </div>
+            <h3 class="font-semibold text-navy text-lg">Scientific & Research</h3>
+          </div>
+          <ul class="list-disc ml-6 space-y-1 text-gray-700">
+            <li>Research and development</li>
+            <li>Biotechnology applications</li>
+            <li>Scientific consultation</li>
+            <li>Market research and analysis</li>
+            <li>Data collection and reporting</li>
+          </ul>
+        </div>
+        
+        <!-- Specialized Services (NEW) -->
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="flex items-center mb-3">
+            <div class="bg-navy rounded-full p-2 mr-3">
+              <i class="fas fa-tools text-gold"></i>
+            </div>
+            <h3 class="font-semibold text-navy text-lg">Specialized Services</h3>
+          </div>
+          <ul class="list-disc ml-6 space-y-1 text-gray-700">
+            <li>Temporary staffing solutions</li>
+            <li>Professional services contracting</li>
+            <li>Environmental services</li>
+            <li>Materials recovery</li>
+            <li>Industrial equipment maintenance</li>
+          </ul>
+        </div>
       </div>
-      <!-- Address Section -->
-      <div class="address-section mt-8">
-        <p id="address" class="text-gray-700 mb-1"></p>
-        <p id="uei-cage" class="text-sm text-gray-500"></p>
+      
+      <!-- Added call-to-action button -->
+      <div class="text-center mt-10">
+        <a href="#naics-codes" class="inline-block bg-gold hover:bg-yellow-500 text-navy font-bold py-2 px-6 rounded-lg transition duration-300">
+          View Our NAICS Codes
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- NAICS Codes Section with improved spacing -->
-  <section class="bg-gray-100 naics-section transition-colors duration-300">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-2xl font-bold mb-6 text-navy">Core NAICS Codes</h2>
-      <button id="naics-toggle" class="text-gold font-semibold underline hover:text-yellow-600 mb-4">Show/Hide Full List</button>
-      <div id="naics-list" class="hidden max-w-4xl mx-auto text-left text-sm bg-white p-6 rounded shadow">
-        <ul class="list-disc ml-6 space-y-1">
-          <li>561210 – Facilities Support Services</li>
-          <li>236118 – Residential Remodelers</li>
-          <li>236220 – Commercial and Institutional Building Construction</li>
-          <li>238210 – Electrical Contractors</li>
-          <li>238220 – Plumbing, Heating, and Air-Conditioning Contractors</li>
-          <li>238910 – Site Preparation Contractors</li>
-          <li>238990 – All Other Specialty Trade Contractors</li>
-          <li>423430 – Computer and Peripheral Equipment Wholesalers</li>
-          <li>541330 – Engineering Services</li>
-          <li>541611 – Administrative & General Management Consulting</li>
-          <li>561320 – Temporary Help Services</li>
-          <li>561720 – Janitorial Services</li>
-          <li>561730 – Landscaping Services</li>
-          <li>562111 – Solid Waste Collection</li>
-          <li>811310 – Commercial & Industrial Equipment Maintenance</li>
-          <li>423610 – Electrical Equipment & Wiring Supplies</li>
-          <li>425120 – Wholesale Trade Agents and Brokers</li>
-          <li>541310 – Architectural Services</li>
-          <li>541430 – Graphic Design Services</li>
-          <li>541511 – Custom Computer Programming Services</li>
-          <li>541512 – Computer Systems Design Services</li>
-          <li>541513 – Computer Facilities Management Services</li>
-          <li>541519 – Other Computer Related Services</li>
-          <li>541613 – Marketing Consulting Services</li>
-          <li>541614 – Logistics Consulting Services</li>
-          <li>541618 – Other Management Consulting Services</li>
-          <li>541690 – Other Scientific and Technical Consulting</li>
-          <li>541714 – R&D in Biotechnology</li>
-          <li>541990 – All Other Professional Services</li>
-          <li>561110 – Office Administrative Services</li>
-          <li>561499 – Other Business Support Services</li>
-          <li>562119 – Other Waste Collection</li>
-          <li>562212 – Solid Waste Landfill</li>
-          <li>562219 – Nonhazardous Waste Disposal</li>
-          <li>562920 – Materials Recovery Facilities</li>
-          <li>562991 – Septic Tank and Related Services</li>
-          <li>562998 – Misc Waste Management Services</li>
-        </ul>
+  <!-- Updated Differentiators Section -->
+  <section id="differentiators" class="py-12 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-2xl font-bold mb-8 text-navy text-center">What Sets Us Apart</h2>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Flexibility -->
+        <div class="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow">
+          <div class="flex items-center mb-3">
+            <div class="bg-navy rounded-full p-3 mr-3 text-xl">
+              <i class="fas fa-handshake text-gold"></i>
+            </div>
+            <h3 class="font-bold text-navy">Flexibility</h3>
+          </div>
+          <p class="text-gray-700">Adaptable service solutions tailored to specific project requirements and client needs.</p>
+        </div>
+        
+        <!-- Accountability -->
+        <div class="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow">
+          <div class="flex items-center mb-3">
+            <div class="bg-navy rounded-full p-3 mr-3 text-xl">
+              <i class="fas fa-clipboard-check text-gold"></i>
+            </div>
+            <h3 class="font-bold text-navy">Accountability</h3>
+          </div>
+          <p class="text-gray-700">Clear communication and transparent processes throughout every project phase.</p>
+        </div>
+        
+        <!-- Reliability -->
+        <div class="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow">
+          <div class="flex items-center mb-3">
+            <div class="bg-navy rounded-full p-3 mr-3 text-xl">
+              <i class="fas fa-shield-alt text-gold"></i>
+            </div>
+            <h3 class="font-bold text-navy">Reliability</h3>
+          </div>
+          <p class="text-gray-700">Consistent delivery of high-quality results on time and within budget constraints.</p>
+        </div>
+        
+        <!-- Efficiency -->
+        <div class="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow">
+          <div class="flex items-center mb-3">
+            <div class="bg-navy rounded-full p-3 mr-3 text-xl">
+              <i class="fas fa-tachometer-alt text-gold"></i>
+            </div>
+            <h3 class="font-bold text-navy">Efficiency</h3>
+          </div>
+          <p class="text-gray-700">Streamlined operations to maximize value and minimize waste in project delivery.</p>
+        </div>
+        
+        <!-- Agility -->
+        <div class="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow">
+          <div class="flex items-center mb-3">
+            <div class="bg-navy rounded-full p-3 mr-3 text-xl">
+              <i class="fas fa-bolt text-gold"></i>
+            </div>
+            <h3 class="font-bold text-navy">Agility</h3>
+          </div>
+          <p class="text-gray-700">Quick response times to changing needs and requirements throughout project lifecycle.</p>
+        </div>
+        
+        <!-- Versatility (NEW) -->
+        <div class="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow">
+          <div class="flex items-center mb-3">
+            <div class="bg-navy rounded-full p-3 mr-3 text-xl">
+              <i class="fas fa-layer-group text-gold"></i>
+            </div>
+            <h3 class="font-bold text-navy">Versatility</h3>
+          </div>
+          <p class="text-gray-700">Comprehensive range of services allowing for integrated solutions across multiple disciplines.</p>
+        </div>
+      </div>
+      
+      <!-- Testimonial or Additional Value Proposition (optional) -->
+      <div class="bg-navy text-white rounded-lg p-6 mt-8 text-center">
+        <blockquote class="text-lg italic">
+          "At Fluid Investment Group, we don't just provide services – we deliver complete solutions tailored to your unique requirements."
+        </blockquote>
       </div>
     </div>
   </section>
+
+  <!-- NAICS Codes Section with Accordion -->
+  <section class="py-12 bg-gray-100" id="naics-codes">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-2xl font-bold mb-6 text-navy text-center">Primary NAICS Codes</h2>
+      <p class="text-center mb-8 text-gray-600">Fluid Investment Group is registered under the following North American Industry Classification System codes</p>
+      
+      <!-- Accordion Container -->
+      <div class="space-y-3">
+        <!-- Construction & Trades Accordion -->
+        <div class="accordion-item bg-white rounded-lg shadow overflow-hidden">
+          <button class="accordion-button w-full flex justify-between items-center text-left p-4 font-semibold text-navy" onclick="toggleAccordion(this)">
+            <div class="flex items-center">
+              <i class="fas fa-hard-hat mr-2 text-gold"></i>
+              Construction & Trades
+            </div>
+            <i class="fas fa-chevron-down text-navy transition-transform"></i>
+          </button>
+          <div class="accordion-content px-4 pb-4">
+            <ul class="list-disc ml-6 space-y-1 text-gray-700">
+              <li>236118 – Residential Remodelers</li>
+              <li>236220 – Commercial and Institutional Building Construction</li>
+              <li>238210 – Electrical Contractors</li>
+              <li>238220 – Plumbing, Heating, and Air-Conditioning Contractors</li>
+              <li>238910 – Site Preparation Contractors</li>
+              <li>238990 – All Other Specialty Trade Contractors</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- IT & Technical Services Accordion -->
+        <div class="accordion-item bg-white rounded-lg shadow overflow-hidden">
+          <button class="accordion-button w-full flex justify-between items-center text-left p-4 font-semibold text-navy" onclick="toggleAccordion(this)">
+            <div class="flex items-center">
+              <i class="fas fa-laptop-code mr-2 text-gold"></i>
+              IT & Technical Services
+            </div>
+            <i class="fas fa-chevron-down text-navy transition-transform"></i>
+          </button>
+          <div class="accordion-content px-4 pb-4">
+            <ul class="list-disc ml-6 space-y-1 text-gray-700">
+              <li>541511 – Custom Computer Programming Services</li>
+              <li>541512 – Computer Systems Design Services</li>
+              <li>541513 – Computer Facilities Management Services</li>
+              <li>541519 – Other Computer Related Services</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Consulting & Professional Accordion -->
+        <div class="accordion-item bg-white rounded-lg shadow overflow-hidden">
+          <button class="accordion-button w-full flex justify-between items-center text-left p-4 font-semibold text-navy" onclick="toggleAccordion(this)">
+            <div class="flex items-center">
+              <i class="fas fa-briefcase mr-2 text-gold"></i>
+              Consulting & Professional
+            </div>
+            <i class="fas fa-chevron-down text-navy transition-transform"></i>
+          </button>
+          <div class="accordion-content px-4 pb-4">
+            <ul class="list-disc ml-6 space-y-1 text-gray-700">
+              <li>541611 – General Management Consulting</li>
+              <li>541613 – Marketing Consulting Services</li>
+              <li>541614 – Logistics Consulting Services</li>
+              <li>541618 – Other Management Consulting Services</li>
+              <li>541690 – Scientific and Technical Consulting</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Facilities & Waste Management Accordion -->
+        <div class="accordion-item bg-white rounded-lg shadow overflow-hidden">
+          <button class="accordion-button w-full flex justify-between items-center text-left p-4 font-semibold text-navy" onclick="toggleAccordion(this)">
+            <div class="flex items-center">
+              <i class="fas fa-building mr-2 text-gold"></i>
+              Facilities & Waste Management
+            </div>
+            <i class="fas fa-chevron-down text-navy transition-transform"></i>
+          </button>
+          <div class="accordion-content px-4 pb-4">
+            <ul class="list-disc ml-6 space-y-1 text-gray-700">
+              <li>561210 – Facilities Support Services</li>
+              <li>561720 – Janitorial Services</li>
+              <li>561730 – Landscaping Services</li>
+              <li>562111 – Solid Waste Collection</li>
+              <li>562119 – Other Waste Collection</li>
+              <li>562212 – Solid Waste Landfill</li>
+              <li>562219 – Nonhazardous Waste Disposal</li>
+              <li>562920 – Materials Recovery Facilities</li>
+              <li>562991 – Septic Tank and Related Services</li>
+              <li>562998 – Miscellaneous Waste Management</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Administrative & Support Accordion -->
+        <div class="accordion-item bg-white rounded-lg shadow overflow-hidden">
+          <button class="accordion-button w-full flex justify-between items-center text-left p-4 font-semibold text-navy" onclick="toggleAccordion(this)">
+            <div class="flex items-center">
+              <i class="fas fa-file-alt mr-2 text-gold"></i>
+              Administrative & Support
+            </div>
+            <i class="fas fa-chevron-down text-navy transition-transform"></i>
+          </button>
+          <div class="accordion-content px-4 pb-4">
+            <ul class="list-disc ml-6 space-y-1 text-gray-700">
+              <li>561110 – Office Administrative Services</li>
+              <li>561320 – Temporary Help Services</li>
+              <li>561499 – All Other Business Support Services</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Other Services Accordion -->
+        <div class="accordion-item bg-white rounded-lg shadow overflow-hidden">
+          <button class="accordion-button w-full flex justify-between items-center text-left p-4 font-semibold text-navy" onclick="toggleAccordion(this)">
+            <div class="flex items-center">
+              <i class="fas fa-cogs mr-2 text-gold"></i>
+              Other Services
+            </div>
+            <i class="fas fa-chevron-down text-navy transition-transform"></i>
+          </button>
+          <div class="accordion-content px-4 pb-4">
+            <ul class="list-disc ml-6 space-y-1 text-gray-700">
+              <li>423430 – Computer and Peripheral Equipment Wholesalers</li>
+              <li>423610 – Electrical Equipment Wholesalers</li>
+              <li>425120 – Wholesale Trade Agents and Brokers</li>
+              <li>541310 – Architectural Services</li>
+              <li>541330 – Engineering Services</li>
+              <li>541430 – Graphic Design Services</li>
+              <li>541714 – R&D in Biotechnology</li>
+              <li>541990 – All Other Professional, Scientific, and Technical Services</li>
+              <li>811310 – Commercial & Industrial Equipment Maintenance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-2xl font-bold mb-6 text-navy">Product & Service Codes (PSC)</h2>
+      <ul class="list-disc ml-6 space-y-2 text-sm">
+        <li>R406 – Policy Review/Development</li>
+        <li>R422 – Market Research/Public Opinion</li>
+        <li>R425 – Engineering/Technical</li>
+        <li>R497 – Personal Services Contracts</li>
+        <li>S208 – Landscaping/<li>S208 – Landscaping/Groundskeeping</li>
+        <li>S212 – Solid Fuel Handling</li>
+        <li>S215 – Warehousing/Storage</li>
+        <li>Z2QA – Real Property Alteration</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Updated Contact Section -->
+  <section id="contact" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-navy mb-2">Contact Information</h2>
+        <p class="text-gray-600 max-w-3xl mx-auto">We welcome the opportunity to discuss how our services can meet your specific requirements.</p>
+      </div>
+      
+      <!-- Company Info Card -->
+      <div class="bg-white rounded-lg shadow-lg p-6 mb-8 border-t-4 border-navy">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="flex items-center mb-4 md:mb-0">
+            <img src="https://github.com/jjwprotozoa/fldinvgrp/blob/main/logo.png" alt="Fluid Investment Group Logo" class="h-16 mr-4">
+            <div>
+              <h3 class="text-2xl font-bold text-navy">Fluid Investment Group <span class="text-gold">LLC</span></h3>
+              <p class="text-gray-600">Government Contracting Solutions</p>
+            </div>
+          </div>
+          <div class="text-center md:text-right">
+            <p class="text-gray-800"><i class="fas fa-map-marker-alt text-gold mr-2"></i> 9752 NW Highway 225, Ocala, Florida 34482-1161</p>
+            <p class="text-gray-600 mt-2 text-sm">SAM.gov Registered | Exp. Mar 1, 2026 | UEI: CLNFQN8C4CT6 | CAGE: 9F8L6</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Contact Cards -->
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Director Contact Card -->
+        <div class="contact-card bg-white rounded-lg shadow-md p-6 border-l-4 border-gold">
+          <div class="flex items-start">
+            <div class="bg-navy rounded-full p-3 mr-4">
+              <i class="fas fa-user text-gold contact-icon"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-navy">Director</h3>
+              <p class="text-gray-700 font-medium text-lg mt-1">Justin Wessels</p>
+              
+              <div class="mt-4 space-y-2">
+                <p class="flex items-center">
+                  <i class="fas fa-envelope text-gold mr-3 contact-icon"></i>
+                  <span 
+                    class="email-protection text-gold hover:underline" 
+                    onclick="decodeEmail('moc.puorgtnemtsevnidiulf@nitsuj')" 
+                    title="Click to email">
+                    moc.puorgtnemtsevnidiulf@nitsuj
+                  </span>
+                </p>
+                
+                <p class="flex items-center">
+                  <i class="fas fa-phone text-gold mr-3 contact-icon"></i>
+                  <a href="tel:+14045930830" class="text-gold hover:underline">+1 404-593-0830</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Head of Operations Contact Card -->
+        <div class="contact-card bg-white rounded-lg shadow-md p-6 border-l-4 border-gold">
+          <div class="flex items-start">
+            <div class="bg-navy rounded-full p-3 mr-4">
+              <i class="fas fa-cogs text-gold contact-icon"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-navy">Head of Operations</h3>
+              <p class="text-gray-700 font-medium text-lg mt-1">Yusuf De Villiers</p>
+              
+              <div class="mt-4 space-y-2">
+                <p class="flex items-center">
+                  <i class="fas fa-envelope text-gold mr-3 contact-icon"></i>
+                  <span 
+                    class="email-protection text-gold hover:underline" 
+                    onclick="decodeEmail('moc.puorgtnemtsevnidiulf@spo')" 
+                    title="Click to email">
+                    moc.puorgtnemtsevnidiulf@spo
+                  </span>
+                </p>
+                
+                <p class="flex items-center">
+                  <i class="fas fa-phone text-gold mr-3 contact-icon"></i>
+                  <a href="tel:+13522343005" class="text-gold hover:underline">+1 352-234-3005</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- CTA Button -->
+      <div class="text-center mt-12">
+        <a href="#" onclick="openPdfModal()" class="inline-block bg-navy hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300 transform hover:-translate-y-1">
+          <i class="fas fa-file-pdf mr-2"></i> View Our Capability Statement
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PDF Modal -->
+  <div id="pdfModal" class="modal fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 hidden z-50">
+    <div class="modal-content relative w-11/12 max-w-4xl mx-auto mt-10 bg-white rounded shadow-lg overflow-hidden">
+      <button class="absolute top-2 right-4 text-gray-700 text-xl font-bold" onclick="closePdfModal()">&times;</button>
+      <iframe id="pdfFrame" src="" class="w-full h-[80vh] border-0"></iframe>
+    </div>
+  </div>
 
   <footer class="bg-navy text-white py-6 text-center">
     <p class="text-sm text-gray-300">&copy; 2025 Fluid Investment Group. All rights reserved.</p>
   </footer>
 
-  <!-- Improved PDF Modal -->
-  <div id="pdfModal" class="modal">
-    <span class="modal-close" onclick="closePdfModal()">&times;</span>
-    <div class="modal-content">
-      <iframe id="pdfFrame" src="" title="Capability Statement PDF"></iframe>
-    </div>
-  </div>
-
-  <!-- Structured Data for SEO (JSON-LD) -->
+  <!-- Interactive Elements & Schema.org Markup -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Fluid Investment Group",
-    "url": "https://fluidinvestmentgroup.com",
-    "logo": "/logo.png",
-    "description": "Government contracting, subcontracting, consulting, and project management services.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "9752 NW Highway 225",
-      "addressLocality": "Ocala",
-      "addressRegion": "FL",
-      "postalCode": "34482-1161",
-      "addressCountry": "US"
-    },
-    "contactPoint": [
-      {
-        "@type": "ContactPoint",
-        "telephone": "+1-404-593-0830",
-        "contactType": "Director",
-        "email": "justin@fluidinvestmentgroup.com",
-        "name": "Justin Wessels"
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Fluid Investment Group LLC",
+      "url": "https://fluidinvestmentgroup.com",
+      "logo": "https://github.com/jjwprotozoa/fldinvgrp/blob/main/logo.png",
+      "description": "Government contracting, facilities management, technical services, consulting, and project management services.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "9752 NW Highway 225",
+        "addressLocality": "Ocala",
+        "addressRegion": "FL",
+        "postalCode": "34482-1161",
+        "addressCountry": "US"
       },
-      {
-        "@type": "ContactPoint",
-        "telephone": "+1-352-234-3005",
-        "contactType": "Head of Operations",
-        "email": "ops@fluidinvestmentgroup.com",
-        "name": "Yusuf De Villiers"
-      }
-    ]
-  }
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-404-593-0830",
+          "contactType": "Director",
+          "name": "Justin Wessels",
+          "email": "justin@fluidinvestmentgroup.com"
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-352-234-3005",
+          "contactType": "Head of Operations",
+          "name": "Yusuf De Villiers",
+          "email": "ops@fluidinvestmentgroup.com"
+        }
+      ],
+      "sameAs": [
+        "https://sam.gov/entity/CLNFQN8C4CT6"
+      ]
+    }
   </script>
 
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" class="fixed bottom-5 right-5 bg-navy text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300 hover:bg-opacity-90">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Additional Scripts -->
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // Contact information
-      const contacts = [
-        { role: "Director", name: "Justin Wessels", phone: "+1 404-593-0830", email: "justin@fluidinvestmentgroup.com" },
-        { role: "Head of Operations", name: "Yusuf De Villiers", phone: "+1 352-234-3005", email: "ops@fluidinvestmentgroup.com" }
-      ];
-      const address = "9752 NW Highway 225, Ocala, Florida 34482-1161";
-      const uei = "CLNFQN8C4CT6";
-      const cage = "9F8L6";
-
-      // Populate contacts
-      const contactContainer = document.getElementById("contacts");
-      contacts.forEach(({ role, name, phone, email }) => {
-        const card = document.createElement("div");
-        card.className = "bg-white p-6 border rounded-lg shadow text-left";
-        card.innerHTML = `
-          <h3 class="text-lg font-bold text-navy mb-1">${role}</h3>
-          <p class="text-gray-800 font-semibold">${name}</p>
-          <p class="text-gray-600"><i class='fas fa-envelope text-gold'></i> <a href="mailto:${email}">${email}</a></p>
-          <p class="text-gray-600"><i class='fas fa-phone text-gold'></i> <a href="tel:${phone.replace(/[^\d]/g, '')}">${phone}</a></p>
-        `;
-        contactContainer.appendChild(card);
-      });
-      document.getElementById("address").textContent = address;
-      document.getElementById("uei-cage").textContent = `SAM.gov Registered | Exp. Mar 1, 2026 | UEI: ${uei} | CAGE: ${cage}`;
-
-      // NAICS toggle
-      document.getElementById("naics-toggle").addEventListener("click", () => {
-        document.getElementById("naics-list").classList.toggle("hidden");
-      });
-
-      // Handle dark mode
-      const darkToggle = document.getElementById("darkToggle");
-      const darkModeIcon = document.getElementById("darkModeIcon");
-      const darkModeText = document.getElementById("darkModeText");
+    // Accordion functionality
+    function toggleAccordion(button) {
+      // Toggle active class on the button
+      button.classList.toggle('active');
       
-      // Check for user preference in localStorage
-      const isDark = localStorage.getItem("darkMode") === "true";
-      if (isDark) {
-        document.documentElement.classList.add("dark");
-        darkModeIcon.classList.remove("fa-moon");
-        darkModeIcon.classList.add("fa-sun");
-        darkModeText.textContent = "Light Mode";
+      // Toggle the rotation of the chevron icon
+      const icon = button.querySelector('.fa-chevron-down');
+      if (button.classList.contains('active')) {
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        icon.style.transform = 'rotate(0)';
       }
-
-      // Dark mode toggle functionality
-      darkToggle.addEventListener("click", () => {
-        // Toggle dark class on html element
-        const isDarkMode = document.documentElement.classList.toggle("dark");
+      
+      // Toggle the content visibility
+      const content = button.nextElementSibling;
+      content.classList.toggle('active');
+      
+      // Optional: Close other accordions when opening one
+      if (button.classList.contains('active')) {
+        const allButtons = document.querySelectorAll('.accordion-button');
+        const allContents = document.querySelectorAll('.accordion-content');
         
-        // Update icon and text
-        if (isDarkMode) {
-          darkModeIcon.classList.remove("fa-moon");
-          darkModeIcon.classList.add("fa-sun");
-          darkModeText.textContent = "Light Mode";
+        allButtons.forEach(btn => {
+          if (btn !== button) {
+            btn.classList.remove('active');
+            btn.querySelector('.fa-chevron-down').style.transform = 'rotate(0)';
+          }
+        });
+        
+        allContents.forEach(cnt => {
+          if (cnt !== content) {
+            cnt.classList.remove('active');
+          }
+        });
+      }
+    }
+    
+    // Open the first accordion by default
+    document.addEventListener('DOMContentLoaded', function() {
+      const firstAccordion = document.querySelector('.accordion-button');
+      if (firstAccordion) {
+        toggleAccordion(firstAccordion);
+      }
+    });
+    
+    // PDF Modal Functionality
+    function openPdfModal() {
+      const modal = document.getElementById('pdfModal');
+      const frame = document.getElementById('pdfFrame');
+      if (!frame.src) frame.src = "/capability-statement.pdf";
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closePdfModal() {
+      const modal = document.getElementById('pdfModal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Back to Top Button Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const backToTopBtn = document.getElementById('backToTopBtn');
+      
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.remove('opacity-0');
+          backToTopBtn.classList.add('opacity-100');
         } else {
-          darkModeIcon.classList.remove("fa-sun");
-          darkModeIcon.classList.add("fa-moon");
-          darkModeText.textContent = "Dark Mode";
+          backToTopBtn.classList.remove('opacity-100');
+          backToTopBtn.classList.add('opacity-0');
         }
-        
-        // Save preference to localStorage
-        localStorage.setItem("darkMode", isDarkMode);
+      });
+      
+      backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       });
     });
-
-    // PDF Modal functions
-    function openPdfModal() {
-      const modal = document.getElementById("pdfModal");
-      const pdfFrame = document.getElementById("pdfFrame");
-      
-      // Set the source if not already set
-      if (!pdfFrame.src || pdfFrame.src === window.location.href) {
-        pdfFrame.src = "/capability-statement.pdf";
-      }
-      
-      modal.style.display = "block";
-      
-      // Prevent scrolling of the background when modal is open
-      document.body.style.overflow = "hidden";
-    }
-
-    function closePdfModal() {
-      document.getElementById("pdfModal").style.display = "none";
-      
-      // Re-enable scrolling
-      document.body.style.overflow = "auto";
-    }
-
-    // Close modal when clicking outside of content
-    window.onclick = function(event) {
-      const modal = document.getElementById("pdfModal");
-      if (event.target === modal) {
-        closePdfModal();
-      }
-    }
-
-    // Allow ESC key to close the modal
-    document.addEventListener("keydown", function(event) {
-      if (event.key === "Escape") {
-        closePdfModal();
-      }
+    
+    // Handle smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        if (this.getAttribute('href') !== '#' && this.getAttribute('onclick') !== 'openPdfModal()') {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80, // Offset for fixed header if needed
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+    
+    // Optional: Add page load animation
+    window.addEventListener('load', function() {
+      document.body.classList.add('loaded');
     });
   </script>
 </body>
