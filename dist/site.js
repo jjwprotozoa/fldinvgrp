@@ -1,0 +1,3 @@
+document.querySelectorAll('[data-print]').forEach(b=>b.addEventListener('click',()=>window.print()));
+const form=document.querySelector('[data-enquiry]');
+if(form)form.addEventListener('submit',event=>{event.preventDefault();if(!form.reportValidity())return;const f=new FormData(form);const text=`Name: ${f.get('name')}\nEmail: ${f.get('email')}\nProject: ${f.get('type')}\n\n${f.get('message')}`;const uri='mailto:hello@axisinnovationgroup.com?subject='+encodeURIComponent('Project enquiry: '+f.get('type'))+'&body='+encodeURIComponent(text);document.querySelector('[data-email-link]').href=uri;document.querySelector('[data-enquiry-result]').hidden=false;document.querySelector('[data-enquiry-result]').focus();});
